@@ -52,6 +52,7 @@ class Game:
 
         move = 0
         print(f"Enter your turn player {piece}")
+        print("Column Number: ", end='')
         try:
             move = int(input()) - 1
         except:
@@ -68,13 +69,16 @@ class Game:
                 self.turn(player)
 
     def display(self):
-        for i in range((self.width * 3) - 2):
+        for i in range((self.width * 3)):
             print('_', end = "")
         print('\n')
         for b in self.board:
+            print(' ', end='')
             for i in b:
                 print(i, ' ', end = "")
             print('\n')
+        print(" 1  2  3  4  5  6  7")
+        print()
 
     def win(self, player):
         print(f"Congrats, player {player} wins!")
